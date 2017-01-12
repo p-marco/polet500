@@ -1,0 +1,17 @@
+{% set taxlist = taxonomylist.get() %}
+{% if taxlist %}
+{% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
+	<ul class="archives">
+		{% for tax,value in taxlist[taxonomy] |sort_by_key('tax') |slice(0, 5)%}
+			<li>
+    			<a 	
+    				class="{{ active }}" 
+    				href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}"
+    			>
+        	       	<span class="label"></span>
+        			<span class="">{{ tax }}</span>
+        		</a>
+    		</li> 
+    	{% endfor %}
+	</ul>
+{% endif %}

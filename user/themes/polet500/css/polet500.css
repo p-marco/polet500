@@ -1,0 +1,37 @@
+   #body{
+        padding-bottom:0
+    }
+    .blog-header * {
+        text-align:left !important
+    }
+
+        .table-container{ display:table; table-layout:fixed; width:100% }
+        .table-col { display:table-row; table-layout:fixed; }
+        @media only screen and (min-width:640px){
+            .table-col { display:table-cell}        
+        }
+        .header--round { border:12px solid #0099CC; margin:0 auto; vertical-align:middle;border-radius:50%; width:96px; height:96px;
+        transition:all .25s}
+        .table-col:hover .label--round, .label--round:hover {  background: #0099cc; color:#fff; border-color:#fff}
+        .text-xs-center{ text-align:center}
+        .label--round{  margin:0 auto; vertical-align:middle;border-radius:50%; 
+        transition:all .25s;  color:inherit; border:12px solid #0099cc; background:none}
+        footer, #footer {color:#000; background:#e6e6e6; position:relative; height:auto;text-align:left; padding-top:2em}
+        header.scrolled { box-shadow:0 0 0 #000; backgound-color:#fff;opacity:1 ; }
+        .search-input { border-radius:0 !important; background-color:#eee !important; color:#000 !important}
+        .archives li {text-transform:capitalize}
+        .btn-sm{width:32px; height:32px; line-height:1.5; border-width:2px; }
+        .btn-lg{
+            width:96px; 
+            height:96px;
+            line-height:72px;   
+            font-size:2em;
+            border-width:12px;
+        }
+ footer a:hover {
+    color: #666 !important;
+    text-decoration: underline;
+  }
+  .totop:hover i {
+    color:#fff !important;
+  }

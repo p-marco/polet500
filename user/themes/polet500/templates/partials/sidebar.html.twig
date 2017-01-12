@@ -1,0 +1,107 @@
+{% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative~'/'~blog.slug) : blog.url %}
+{% set new_base_url = blog.url == '/' ? '' : blog.url %}
+
+{% if page.taxonomy.author %}
+<h3>Scheda</h3>
+
+        <ul class="archives">
+            {% for author in page.taxonomy.author %}
+            <li>
+                <span class="label"></span>
+                <span class="">Autore: </span>
+                <a href="{{ blog.url|rtrim('/') }}/author{{ config.system.param_sep }}{{ author }}" class="p-category">
+                <span class="">{{ author }}</span>
+                </a>
+            </li>
+            {% endfor %}
+{% endif %}
+{% if page.taxonomy.date %}
+    {% for date in page.taxonomy.date %}
+    <li>
+                <span class="label"></span>
+                <span class="">Data: </span>
+                <a href="{{ blog.url|rtrim('/') }}/date{{ config.system.param_sep }}{{ date }}" class="p-category">
+                <span class="">{{ date }}</span>
+                </a>
+            </li>
+    {% endfor %}
+
+
+    
+    <li>
+        <span class="label"></span>
+        <span>Esporta: <a class="" href="{{ page.url }}.json"> JSON</a></span>
+    </li>
+   </ul>
+<hr>
+{% endif %}
+
+
+        {% if page.taxonomy.chronology %}
+            {% for chronology in page.taxonomy.chronology %}
+                <h4>{{ 'Cronologia'|t }}</h4> 
+                <ul class="archives">
+                    <li>
+                        <a href="{{ blog.url|rtrim('/') }}/chronology{{ config.system.param_sep }}{{ chronology }}" class="p-category">
+                            <span class="label"></span>
+                            <span class="">{{ chronology }}</span>
+                        </a>
+                    </li>
+                        
+                </ul>
+            {% endfor %}
+        {% endif %}
+
+<!--TOFIX: al piu presto rendere dinamica questa parte-->
+
+{% if config.plugins.taxonomylist.enabled %}
+
+<div class="sidebar-content">
+    <h4>{{ 'Argomenti'|t }}</h4> 
+    {% if page.taxonomy.tag %}
+        <ul  class="archives">
+            {% for tag in page.taxonomy.tag  %}
+            <li>
+                <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="p-category">
+                    <span class="label"></span>
+                    <span class="">{{ tag }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+         {% else %}         
+    {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+            {% endif %}
+    <h4>{{ 'Personaggi'|t }}</h4> 
+ {% if page.taxonomy.char %}
+        <ul  class="archives">
+            {% for char in page.taxonomy.char %}
+            <li>
+                <a href="{{ blog.url|rtrim('/') }}/char{{ config.system.param_sep }}{{ char }}" class="p-category">
+                <span class="label"></span>
+                <span class="">{{ char }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+         {% else %}         
+    {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'char'} %}
+            {% endif %}
+ 
+            </div>
+<hr>
+{% endif %}
+
+<!--/ENDTOFIX-->
+{% if config.plugins.archives.enabled %}
+<div class="">
+    <h4>{{ 'Archivio'|t }}</h4>
+    {% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
+</div>
+{% endif %}
+{% if config.plugins.simplesearch.enabled %}
+<div class="">
+    <h5>{{ 'Cerca'|t }}</h5>
+    {% include 'partials/simplesearch_searchbox.html.twig' %}
+</div>
+{% endif %}

@@ -1,0 +1,113 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+
+	{% set home_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(-35,81,122) %}
+		{% if home_image %}
+			<div class="flush-top blog-header blog-header-image" style="background-color:#227799;">
+			{% else %}
+				<div class="flush-top blog-header blog-header-image" style="background-color:#227799;">
+		{% endif %}
+		{{ page.content }}
+		</div>
+		{% if config.plugins.breadcrumbs.enabled %}
+				{% include 'partials/breadcrumbs.html.twig' %}
+			{% endif %}
+		
+	<div class="content-wrapper " style=" font-size:115%;  padding-bottom:2em">
+		<h2>{{ 'Homepage'|t }}</h2>
+		<h5>{{ site.metadata.description }}.</h5>
+ 
+		<p>
+    		<span class="tags">
+        		<a href="{{ base_url }}/chi-siamo"> Scopri di più</a>
+        	</span>
+        </p>
+	</div>
+
+
+
+<!--Data counters-->
+<div class="content-wrapper" style="padding-bottom:2em">
+	<h2 class="text-xs-center">La banca dati</h2>
+	<div class="table-container">
+<!--Decomment below to connect the tax counters-->
+<!--
+{% if config.plugins.taxonomylist.enabled %}
+			<div class="table-col text-xs-center">
+				<a  href="{{ blog_url }}">
+					<h4 class="label label--round btn-lg">
+						{{ item |length }}
+					</h4>
+					
+					<h5>Opere schedate</h5>
+				</a>		
+				<p><span class="tags"><a href="{{ blog_url }}">Indice delle schede ></a></span></p>
+			</div>
+			<div class="table-col text-xs-center">
+				<a href=" {{ base_url }}/testi ">
+					<h4 class="label label--round btn-lg">
+						{{ blog |length }}
+					    {% include 'partials/taxonomycount.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+					</h4>
+					<h5>Argomenti trattati</h5>
+				</a>		
+				<p><span class="tags"><a href="{{ base_url }}/testi">Indice degli argomenti ></a></span></p>
+			</div>
+			<div class="table-col text-xs-center">
+				<a href=" {{ base_url }}/testi ">
+					<h4 class="label label--round btn-lg">
+					    {% include 'partials/taxonomycount.html.twig' with {'base_url':new_base_url, 'taxonomy':'char'} %}
+					    						{{ items |length }}
+
+					</h4>
+					<h5>Personaggi coinvolti</h5>
+				</a>		
+				<p><span class="tags"><a href="{{ blog_url }}">Indice delle persone ></a></span></p>
+			</div>
+{% endif %}
+-->
+<!--Comment to hide the fallback-->
+		<div class="text-xs-center table-col"></div>
+		<div class="text-xs-center table-col">
+			<a href="{{ base_url }}/schede">
+				<p class="label label--round btn-lg"><i class="fa fa-file-text-o"></i></p>
+				<h4> Consulta le schede</h4>
+			</a>
+			<p><span class="tags">
+				<a href="{{ base_url }}/schede">Indice delle schede</a>
+			</span></p>
+		</div>
+		<div class="text-xs-center table-col"></div>
+
+<!--Close divs-->
+	</div>
+</div>
+<!--/End counters-->
+
+		<div class="content-wrapper" style=" padding-top:3em; padding-bottom:3em; text-align:center; background:#227799; color:#fff">
+		<h2>Partecipa</h2>
+		<p>Scrivi a <a href="#">{{ site.author.email }}</a> per partecipare al progetto.</p>
+	</div>
+
+	
+	<div class="content-wrapper" style=" padding-top:1em; padding-bottom:2em">
+		<h2>Chi siamo</h2>
+		<p><strong>Responsabile scientifico</strong>: Antonello Fabio Caterino</p>
+		<p><small><strong>Collaboratori</strong>: Anna Gabriella Chisena; Marcello Bolpagni; Silvia Lai; Federica Congedo</small></p>
+		<p><small><strong>Supporto tecnico ed informatico</strong>: Marco Petolicchio</small></p>
+	</div>
+
+
+
+<!--
+{% if config.plugins.taxonomylist.enabled %}
+    <h4>{{ 'Argomenti'|t }}</h4>
+    {% include 'partials/taxonomycount.html.twig' with {'taxonomy':'tag'} %}
+    <h4>{{ 'Personaggi'|t }}</h4>
+    {% include 'partials/taxonomycount.html.twig' with {'taxonomy':'char'} %}
+</div>
+{% endif %}
+-->
+{% endblock %}

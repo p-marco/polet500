@@ -1,0 +1,170 @@
+<div class="list-item h-entry">
+
+    {% set header_image = page.header.header_image|defined(true) %}
+    {% set header_image_width  = page.header.header_image_width|defined(900) %}
+    {% set header_image_height = page.header.header_image_height|defined(300) %}
+    {% set header_image_file = page.header.header_image_file %}
+
+    <div class="list-blog-header">
+        
+        
+        {% if page.header.link %}
+            <h2 class="p-name">
+                {% if page.header.continue_link is not sameas(false) %}
+                <a href="{{ page.url }}"><i class="fa fa-angle-double-right u-url"></i></a>
+                {% endif %}
+                <a href="{{ page.header.link }}" class="u-url">{{ page.title }}</a>
+            </h2>
+        {% else %}
+            <h2 class="p-name"><a href="{{ page.url }}" class="u-url"> {{ page.title }}</a></h2>
+        {% endif %}
+
+    </div>
+
+    <div class="list-blog-padding">
+
+    {% if page.header.continue_link is sameas(false) %}
+        <div class="e-content">        
+            {{ page.content }}
+        </div>
+        {% if not truncate %}
+        {% set show_prev_next = true %}
+        {% endif %}
+    {% elseif truncate and page.summary != page.content %}
+        <div class="p-summary e-content">
+            {{ page.summary }}
+            <p><a href="{{ page.url }}">{{ 'Leggi la scheda completa'|t }}</a></p>
+        </div>
+    {% elseif truncate %}
+        <div class="p-summary e-content">
+            {% if page.summary != page.content %}
+                    {{ page.content|truncate(55) }}
+                </div>
+            {% else %}
+
+                    {{ page.content }}
+                
+            {% endif %}
+
+            <p><a href="{{ page.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a></p>
+        </div>
+    {% else %}
+   
+        <div class="e-content">
+            {{ page.content }}
+        </div>
+  <h4>{{ 'Riferimenti'|t }}</h4> 
+    <style>
+        .text-uppercase {  font-weight:bold}
+        .text-em {font-style:italic}
+        .text-lowercase {text-transform:lowercase}
+        .label-border {background:none; border: 2px solid #227799}
+    </style>
+        <ul  class="archives">
+            <h5><span class="label">B</span>Bibliografia</h5>
+            {% for bibliography in page.taxonomy.bibliography if bibliography.Categoria=='Bibliografia' %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,,
+                <span class="text-em">{{ bibliography.Titolo }}</span>,
+                <span class="">{{ bibliography.Editore }}</span>,
+                <span class="">{{ bibliography.Luogo }}</span> 
+                {% if bibliography.Pagine %}
+                ,
+                    <span class="text-lowercase">pp. {{ bibliography.Pagine }}</span> 
+                {% endif %}
+                .
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+
+            </li>            
+            {% endfor %}
+        </ul>
+        <h5>Fonti</h5>
+        <ul  class="archives">
+            <h6><span class="label">E</span>Epistolari</h6>
+            {% for bibliography in page.taxonomy.bibliography if bibliography.Tipologia=='Epistolare' %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span> - 
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Destinatario }}">
+                        {{ bibliography.Destinatario }}
+                    </a>
+                </span>, ,
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+            </li>            
+            {% endfor %}
+        </ul>
+        <ul  class="archives">
+                <h6><span class="label">P</span>Poetiche</h6>
+
+            {% for bibliography in page.taxonomy.bibliography if bibliography.Tipologia=='Poetica' %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+            </li>            
+            {% endfor %}
+        </ul>
+        <ul  class="archives">
+            <h6><span class="label">S</span>Storiche</h6>
+            {% for bibliography in page.taxonomy.bibliography|sort_by_key('Data') if bibliography.Tipologia=='Storica' %}
+            <li>
+                    <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="">{{ bibliography.Data }}</span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+            </li>            
+            {% endfor %}
+        </ul>
+        {% if config.plugins.comments.enabled %}
+            {% include 'partials/comments.html.twig' %}
+        {% endif %}
+
+        {% set show_prev_next = true %}
+    {% endif %}
+
+    </div>
+</div>

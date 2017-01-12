@@ -1,0 +1,8 @@
+{% set taxlist = taxonomylist.get() %}
+
+{% if taxlist[taxonomy] %}
+
+    {% for tax, value in taxlist[taxonomy] %}
+
+    {% endfor %}
+{% endif %}
