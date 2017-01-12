@@ -1,4 +1,4 @@
-# ![](http://nuovorinascimento.org/polet500/assets/img/banner.jpg) PoLet500 - Polemiche Letterarie del Cinquecento
+# ![](https://github.com/p-marco/polet500/blob/master/assets/img/banner.jpg) PoLet500 - Polemiche Letterarie del Cinquecento
 
 PoLet500 - Polemiche Letterarie del Cinquecento è un progetto in costruzione di schedatura telematica di polemiche letterarie del Cinquecento italiano.
 
