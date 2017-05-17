@@ -4,7 +4,7 @@
 
 	{% block content %}
 	{% set blog_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(120,21,2) %}
-
+<!--
 		{% if blog_image %}
 		<div class="flush-top blog-header blog-header-image" style=" background-color: #b71c1c ">
 		{% else %}
@@ -12,26 +12,28 @@
 		{% endif %}
 			{{ page.content }}
 		</div>
-		
+	-->	
+		<!--
 
 			{% if config.plugins.breadcrumbs.enabled %}
 				{% include 'partials/breadcrumbs.html.twig' %}
 			{% endif %}
-
-		<div class="content-wrapper blog-content-list grid pure-g">
-			<div id="listing" class="block pure-u-2-3 h-feed">
+		-->
+		<div class="content-wrapper" style="max-width:920px; margin:0 auto">
+			<div id="listing" class="block">
 				{% for child in collection %}
+				{% if child.visible!='no' %}
 			        {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+			    {% endif %}
 			    {% endfor %}
 
                 {% if config.plugins.pagination.enabled and collection.params.pagination %}
                     {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
                 {% endif %}
 			</div>
-			<div id="sidebar" class="block size-1-3 pure-u-1-3">
-				{% include 'partials/sidebar.html.twig' with {'blog':page} %}
-			</div>
+			
 		</div>
+		{% include "blog_utils.html.twig" %}
 		
 	{% endblock %}
 

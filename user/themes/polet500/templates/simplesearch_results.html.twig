@@ -1,0 +1,23 @@
+{% extends 'partials/simplesearch_base.html.twig' %}
+
+{% block content %}
+    <div class="content-wrapper">
+    <h1 class="text-xs-l">{{"PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t}}</h1>
+    <div class="">
+        {% include 'partials/simplesearch_searchbox.html.twig' %}
+    </div>
+
+    <p>
+        {% if search_results.count == 1 %}
+            {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query)|raw }}
+        {% else %}
+            {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query, search_results.count)|raw }}
+        {% endif %}
+    </p>
+    <ul>
+    {% for page in search_results %}
+        <li><h2><a href="{{ page.url }}">{{ page.title }}</a></h2></li>
+    {% endfor %}
+    </ul>
+    </div>
+{% endblock %}

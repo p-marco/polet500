@@ -1,0 +1,125 @@
+<div class="e-content content-wrapper" style=" font-family:'Quattrocento'; font-size:98%; max-width:920px; margin:0 auto" >
+
+  <h4>{{ 'Riferimenti'|t }}</h4> 
+    <style>
+        .text-uppercase {  font-weight:bold}
+        .text-em {font-style:italic}
+        .text-lowercase {text-transform:lowercase}
+        .label-border {background:none; border: 2px solid #227799}
+    </style>
+        <ul  class="archives"  id="refList">
+            <h5><span class="label">B</span>Bibliografia</h5>
+            {% for bibliography in page.taxonomy.bibliography if bibliography.Categoria=='Bibliografia' %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,,
+                <span class="text-em">{{ bibliography.Titolo }}</span>,
+                {% if bibliography.Volume %}
+                in 
+                <span class="text-em"> {{ bibliography.Volume }}</span>;
+                {% endif %}
+                <span class="">{{ bibliography.Editore }}</span>,
+                <span class="">{{ bibliography.Luogo }}</span> 
+                {% if bibliography.Pagine %}
+                ,
+                    <span class="text-lowercase">pp. {{ bibliography.Pagine }}</span> 
+                {% endif %}
+                .
+                {% if bibliography.Link %}
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+            </li>            
+            {% endfor %}
+        </ul>
+        <h5>Fonti</h5>
+        <ul  class="archives">
+            <h6><span class="label">E</span>Epistolari</h6>
+            {% for bibliography in page.taxonomy.bibliography if bibliography.Tipologia=='Epistolare' %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span> - 
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Destinatario }}">
+                        {{ bibliography.Destinatario }}
+                    </a>
+                </span>, ,
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                {% if bibliography.Link %}
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+            </li>            
+            {% endfor %}
+        </ul>
+        <ul  class="archives">
+                <h6><span class="label">P</span>Poetico-Letterarie</h6>
+
+            {% for bibliography in page.taxonomy.bibliography if ( bibliography.Tipologia=='Poetica' ) or ( bibliography.Tipologia=='Letteraria' ) %}
+            <li>
+                <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
+                        {{ bibliography.Data }}
+                    </a>
+                </span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                {% if bibliography.Link %}
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+            </li>            
+            {% endfor %}
+        </ul>
+
+        <ul  class="archives">
+            <h6><span class="label">S</span>Storiche</h6>
+            {% for bibliography in page.taxonomy.bibliography|sort_by_key('Data') if bibliography.Tipologia=='Storica' %}
+            <li>
+                    <span class="label label-border"></span>
+                <span class="text-uppercase">
+                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
+                        {{ bibliography.Autore }}
+                    </a>
+                </span>,
+                <span class="">{{ bibliography.Data }}</span>,
+                <span class="text-em">{{ bibliography.Titolo }}</span>
+                {% if bibliography.Link %}
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+                {% endif %}
+            </li>            
+            {% endfor %}
+        </ul>
+        {% if config.plugins.comments.enabled %}
+            {% include 'partials/comments.html.twig' %}
+        {% endif %}			
+	
+		</div>

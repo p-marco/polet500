@@ -1,5 +1,10 @@
 ---
 title: Polemiche Pellegrino-Salviati e altri
+metadata:
+	description: Il dialogo Il Carrafa di Pellegrino sostiene la superiorità della epica tassiana rispetto al Furioso: la polemica infiamma poi vari intellettuali come Salviati.
+	og:image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
+	image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
+	keywords: polemiche letterarie, pellegrino salviati, letteratura cinquecento
 taxonomy:
 	category: blog
     tag: [Gerusalemme Liberata, Orlando Furioso, Accdemia della Crusca, Dialoghi, Lingua, Unità di tempo e luogo, Religiosità]
@@ -28,7 +33,7 @@ taxonomy:
 	    Tipologia: Poetica
 	    Autore: Lenoardo Salviati
 	    Destinatario: dedicatario   Orazio Rucellai
-	    Titolo: 'Degli Accademici della Crusca Difesa dell''Orlando Furioso dell''Ariosto contra ''l dialogo dell''Epica poesia di Camillo Pellegrino. Stacciata prima.'
+	    Titolo: La «largu inconsiderata licenza». Note su Diomede Borghesi censore del Tasso
 	    Curatori volume: 
 	    Titolo volume: 
 	    Rivista: 

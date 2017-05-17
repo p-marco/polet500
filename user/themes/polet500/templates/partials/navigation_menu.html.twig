@@ -1,0 +1,45 @@
+<style>
+.navigation-bar{position:fixed; width:100%; height:auto; background:#e6e6e6;
+z-index:9999;
+    }
+.content-wrapper.text-serif{font-family: "Raleway", sans-serif;
+    font-size:0.75em;
+    
+   }
+.table-row-heading.no-bg{
+    background:none
+}
+
+</style>
+
+
+    <a href="#header-nav" id="nav-trigger" class="toggle-nav callTo-primary">
+        <span id="label-toggle--scheda-nav">
+            <i class="fa fa-bars"></i><br>
+            <small style="font-size:12px">MENU</small>
+        </span>
+    </a>
+
+<header class="navigation-bar" id="header-nav">
+<div class="content-wrapper text-serif">
+<br>
+    <div class="table-container">
+        <div class="table-row-heading no-bg" style="text-align:center">
+            
+            {% if config.plugins.simplesearch.enabled %}
+                <div class="table-col">{% include 'partials/simplesearch_searchbox.html.twig' %}</div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-row-heading no-bg">
+            {% block header_navigation %}
+                {% include 'partials/navigation_items.html.twig' %}
+            {% endblock %}
+           <div class="table-col"><a href="#nav-trigger-1" id="label-toggle--header-nav"><i class="label fa fa-close"></i> Close</a></div>
+        </div>
+    </div>
+
+</div>
+</header>

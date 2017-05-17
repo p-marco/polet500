@@ -2,15 +2,15 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp/htdocs/polet500/user/config/site.yaml',
-    'modified' => 1483623363,
+    'modified' => 1490264091,
     'data' => [
         'title' => 'PoLet500',
         'author' => [
             'name' => 'Polemiche Letterarie del Cinquecento',
-            'email' => 'polemicheletterarie@gmail.com'
+            'email' => 'polet500@nuovorinascimento.org'
         ],
         'blog' => [
-            'route' => '/testi/'
+            'route' => ''
         ],
         'metadata' => [
             'title' => 'PoLet500 - Polemiche Letterarie del 500',

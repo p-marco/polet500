@@ -1,0 +1,52 @@
+<div class="e-content content-wrapper" style="  font-size:0.75em; font-family:'Raleway',sans-serif !important; " >
+
+<h4>Riferimenti</h4>
+	<div class="table-container">
+		<div class="table-row-heading">
+			<div class="table-col bib"><a href="#"><i class="fa fa-sort" aria-hidden="true"></i></a> Year </div>
+			<div class="table-col bib"><a href="#"><i class="fa fa-sort" aria-hidden="true"></i></a> Author </div>
+			<div class="table-col bib"><a href="#"><i class="fa fa-sort" aria-hidden="true"></i></a> Category: Type</div>
+			<div class="table-col bib">Publication</div>
+			<div class="table-col bib">Link</div>
+		</div>
+		{% for bibliography in page.taxonomy.bibliography |sort %}
+			<div class="table-row-bib">
+				<div class="table-col bib">{{ bibliography.Data }}</div>
+				<div class="table-col bib">{{ bibliography.Autore }}</div>
+				<div class="table-col bib">{{ bibliography.Categoria }} : {{ bibliography.Tipologia }}</div>
+				<div class="table-col bib">
+					<span class="text-uppercase">
+                        {{ bibliography.Autore }}
+                    </span>
+                    {% if bibliography.Destinatario %}
+					<span class="text-uppercase"> - 
+                    
+                        {{ bibliography.Destinatario }}
+                	</span> 
+                	{% endif %}
+                ( {{ bibliography.Data }} )
+                ,
+					<span><em>{{ bibliography.Titolo }}</em>.</span>
+					{% if bibliography.Volume %}
+                in 
+                <span class="text-em"> {{ bibliography.Volume }}</span>;
+                {% endif %}
+                <span class="">{{ bibliography.Editore }}</span>,
+                <span class="">{{ bibliography.Luogo }}</span> 
+                {% if bibliography.Pagine %}
+                ,
+                    <span class="text-lowercase">pp. {{ bibliography.Pagine }}</span> 
+                {% endif %}
+				</div>
+				<div class="table-col bib">{% if bibliography.Link %}
+                <a href="{{ bibliography.Link }}" target="_blank">
+                    <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+                {% else %} NONE
+                {% endif %}</div>
+			</div>
+		{% endfor %}
+				
+	</div>
+
+</div>

@@ -1,0 +1,20 @@
+
+    {% if theme_config.dropdown.enabled %}
+        {{ _self.loop(pages) }}
+    {% else %}
+        {% for page in pages.children.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+            <div class="table-col {{ current_page }}">
+                {% if label %}<span class="label"></span>{% endif %}
+                <a href="{{ page.url }}">
+                    {% if page.header.icon %}
+                        <span class="icon-bg">
+                            <i class="label-bg fa {{ page.header.icon }}"></i>
+                        </span>
+                    {% endif %}
+                    <span class="mitem-legend">{{ page.menu }}</span>
+                </a>
+            </div>
+        {% endfor %}
+
+    {% endif %}

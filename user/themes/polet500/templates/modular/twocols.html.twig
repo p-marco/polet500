@@ -1,0 +1,18 @@
+<div class="content-wrapper">
+	<div class="table-container">
+		<div class="table-col">
+			<h2> {{ page.header.heading }} </h2>
+		</div>
+		<div class="table-col">
+			<p> {{ page.header.paragraph }} </p>
+			{% for button in page.header.buttons %}
+				<span class="{{ button.class }}">
+					<a href="{{ button.link }}">
+					<i class="fa {{ button.icon }}"></i> 
+					{{ button.label }} 
+					</a> 
+				</span>
+			{% endfor %}
+		</div>
+	</div>
+</div>

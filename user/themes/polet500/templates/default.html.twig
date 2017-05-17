@@ -2,14 +2,17 @@
 
 {% block content %}
 {% set home_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(-35,81,122) %}
-
+<!--
 <div class="flush-top blog-header blog-header-image" style=" background-color:#78909c">
 <h1>{{ page.title }}</h1>
 </div>		
 		{% if config.plugins.breadcrumbs.enabled %}
 				{% include 'partials/breadcrumbs.html.twig' %}
 			{% endif %}
-			<div class="content-wrapper">
-	{{ page.content }}
+			-->
+			<div class="content-wrapper" style="max-width:920px; margin:0 auto; text-align:left">
+			<h1 style="text-align:left">{{ page.title }}</h1>
+
+	<div style="text-align:left">{{ page.content }}</div>
 	</div>
 {% endblock %}

@@ -2,11 +2,11 @@
 {% if taxlist %}
 {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
 	<ul class="archives">
-		{% for tax,value in taxlist[taxonomy] |sort_by_key('tax') |slice(0, 5)%}
+		{% for tax,value in taxlist[taxonomy] |ksort %}
 			<li>
     			<a 	
     				class="{{ active }}" 
-    				href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}"
+    				href="{{ site.url }}/polet500/schede/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}"
     			>
         	       	<span class="label"></span>
         			<span class="">{{ tax }}</span>

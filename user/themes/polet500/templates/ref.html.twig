@@ -1,0 +1,17 @@
+	{% set new_base_url = blog.url== '/' ? '' : blog.url %}
+
+{% embed 'partials/base.html.twig' %}
+	{% block content %}
+
+<div class="flush-top blog-header blog-header-image" style=" background-color:#78909c">
+<h1>{{ page.title }}</h1>
+</div>
+{% if config.plugins.taxonomylist.enabled %}
+<div class="content-wrapper" style="max-width:920px; margin:0 auto">
+    <h4>{{ page.content }}</h4>
+    {%  include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'bibliography.autore' } %}
+</div>
+{% endif %}
+
+{% endblock %}
+{% endembed %}

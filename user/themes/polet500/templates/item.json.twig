@@ -1,2 +1,2 @@
-{% set payload = {frontmatter: page.header, content: page.content}  %}
+{% set payload = {frontmatter: page.header, content: page.header.taxonomy.bibliography}  %}
 {{ payload|json_encode|raw }}

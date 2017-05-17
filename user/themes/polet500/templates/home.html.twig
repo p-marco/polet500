@@ -1,19 +1,40 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-
-
+<style>
+.scrolled {z-index:9999 !important}
+</style>
+<!--
 	{% set home_image = page.media.images|first.grayscale().contrast(20).brightness(-100).colorize(-35,81,122) %}
 		{% if home_image %}
-			<div class="flush-top blog-header blog-header-image" style="background-color:#227799;">
+			<div class="flush-top blog-header blog-header-image prova" style="background-image: url({{ home_image.url }});">
 			{% else %}
-				<div class="flush-top blog-header blog-header-image" style="background-color:#227799;">
+			<div style="width:100%; height:100%; position:fixed; top:0; left:0; background-image: url('assets/img/libri.jpg'); background-size:cover"></div>
+				<div class="flush-top blog-header blog-header-image home-header" style="min-height:105vh; height:auto; color:#227799; position:relative">
+				<div style="position:absolute; top:0; left:0; width:100%; height:100%; background:#1f272d; opacity:0.5"></div>
 		{% endif %}
-		{{ page.content }}
+
+			<div style="position:relative; z-index:20;">
+			<h1>PoLet500</h1>
+			{{ page.content }}
+					<h6 style="color:#fff">{{ site.metadata.description }}.</h6>
+					<div>
+			<span class="tags"><a style="background:rgba(255,255,255,.75);  color:#ff6600; font-weight:bold; letter-spacing:0.1em; padding:1em; margin:1em" href="{{ base_url }}/schede">L'archivio</a></span>
+			<span class="tags"><a style="background:rgba(255,255,255,.1); color:#fff; letter-spacing:0.1em; padding:1em; margin:1em" href="#progetto">Il progetto</a></span>
+			
+			
 		</div>
+
+			</div>
+
+		</div>
+-->
+		<!--
 		{% if config.plugins.breadcrumbs.enabled %}
 				{% include 'partials/breadcrumbs.html.twig' %}
 			{% endif %}
+		-->
+		<!--
 		
 	<div class="content-wrapper " style=" font-size:115%;  padding-bottom:2em">
 		<h2>{{ 'Homepage'|t }}</h2>
@@ -25,13 +46,17 @@
         	</span>
         </p>
 	</div>
+	-->
 
 
 
 <!--Data counters-->
+<!--
 <div class="content-wrapper" style="padding-bottom:2em">
 	<h2 class="text-xs-center">La banca dati</h2>
 	<div class="table-container">
+-->
+
 <!--Decomment below to connect the tax counters-->
 <!--
 {% if config.plugins.taxonomylist.enabled %}
@@ -43,7 +68,7 @@
 					
 					<h5>Opere schedate</h5>
 				</a>		
-				<p><span class="tags"><a href="{{ blog_url }}">Indice delle schede ></a></span></p>
+				<p><span class="tags"><a href="{{ blog_url }}">Indice delle schede</a></span></p>
 			</div>
 			<div class="table-col text-xs-center">
 				<a href=" {{ base_url }}/testi ">
@@ -53,22 +78,21 @@
 					</h4>
 					<h5>Argomenti trattati</h5>
 				</a>		
-				<p><span class="tags"><a href="{{ base_url }}/testi">Indice degli argomenti ></a></span></p>
+				<p><span class="tags"><a href="{{ base_url }}/schede/indice_degli_argomenti">Indice degli argomenti</a></span></p>
 			</div>
 			<div class="table-col text-xs-center">
 				<a href=" {{ base_url }}/testi ">
 					<h4 class="label label--round btn-lg">
-					    {% include 'partials/taxonomycount.html.twig' with {'base_url':new_base_url, 'taxonomy':'char'} %}
-					    						{{ items |length }}
-
+			        
 					</h4>
 					<h5>Personaggi coinvolti</h5>
 				</a>		
-				<p><span class="tags"><a href="{{ blog_url }}">Indice delle persone ></a></span></p>
+				<p><span class="tags"><a href="{{ base_url }}/schede/indice_dei_personaggi">Indice dei personaggi</a></span></p>
 			</div>
 {% endif %}
 -->
 <!--Comment to hide the fallback-->
+<!--
 		<div class="text-xs-center table-col"></div>
 		<div class="text-xs-center table-col">
 			<a href="{{ base_url }}/schede">
@@ -80,26 +104,161 @@
 			</span></p>
 		</div>
 		<div class="text-xs-center table-col"></div>
-
+	-->
 <!--Close divs-->
+<!--
 	</div>
 </div>
+-->
 <!--/End counters-->
-
-		<div class="content-wrapper" style=" padding-top:3em; padding-bottom:3em; text-align:center; background:#227799; color:#fff">
-		<h2>Partecipa</h2>
-		<p>Scrivi a <a href="#">{{ site.author.email }}</a> per partecipare al progetto.</p>
-	</div>
-
+<div style="position:relative; z-index:10; font-family:'Raleway',sans-serif" id="archivio">
 	
-	<div class="content-wrapper" style=" padding-top:1em; padding-bottom:2em">
-		<h2>Chi siamo</h2>
-		<p><strong>Responsabile scientifico</strong>: Antonello Fabio Caterino</p>
-		<p><small><strong>Collaboratori</strong>: Anna Gabriella Chisena; Marcello Bolpagni; Silvia Lai; Federica Congedo</small></p>
-		<p><small><strong>Supporto tecnico ed informatico</strong>: Marco Petolicchio</small></p>
+	<div class="content-wrapper text-heading">
+		<h1 class="text-xs-l">Polemiche Letterarie del Cinquecento</h1>
+		<p>Polemiche Letterarie del Cinquecento è un progetto in costruzione di schedatura elettronica di polemiche letterarie del cinquecento italiano.
+		</p>
+		<p>
+			<span class="tags tags-bg bg-primary"><a href="{{ base_url}}/schede">L'Archivio</a></span>
+			<span class="tags tags-bg bg-primary"><a href="{{ base_url}}/il-progetto">Il Progetto</a></span>
+			<span class="tags tags-bg bg-primary"><a href="{{ base_url}}/contatti">Contatti</a></span>
+		</p>
+		</div>
+
+<div style="width:100%; height:400px; background-image: url('{{ base_url }}/assets/img/libri2.jpg'); background-size:cover"></div>
+			
+
+</DIV>
+	
+	<div style=" padding-top:1em; padding-bottom:2em; background-color:#fff; position:relative">
+	<div style="position:absolute; top:0; left:0;width:100%; height:100%; background-color:#fff; opacity:0.95"></div>
+		<div style="position:relative; z-index:10" id="archivio">
+		{% include 'modular/twocols.html.twig' with {'page': page.find('/schede/_impressum/')} %}
+
+		<!--	
+		<div>
+		<div class="table-container">
+			<div class="table-col">
+				<h2>L'archivio</h2>
+			</div>
+			<div class="table-col">
+			<p>La banca dati può essere consultata attraverso gli indici dei personaggi coinvolti, degli argomenti delle schede e da un indice completo delle opere schedate. Ogni scheda prevede una sinossi, informazioni di schedatura ed i riferimenti (opere, fonti).</p>
+			
+			</div>
+			</div>
+			-->
+			<div>
+			<h3 style="text-align:center">Indici</h3>
+		</div>
+		<div class="table-container">
+			
+			
+			<div class="table-col" style="text-align:center">
+				<div class="avatar-184" style=" background-image:url('{{ base_url }}/assets/img/char.jpg');"></div>
+					<h6>Personaggi</h6>
+					<div style="width:80%; margin:0 auto; background: #ff6600; height:2px"></div>
+					<p>Indice dei personaggi coinvolti</p>
+					<p><span class="tags"><a href="schede/indice_dei_personaggi">Consulta l'indice'</a></span></p>
+					
+			</div>
+			<div class="table-col" style="text-align:center">
+				<div class="avatar-184" style=" background-image: url('{{ base_url }}/assets/img/archive.jpg'); border-radius:50%; background-size:cover"></div>
+					<h6>Schede</h6>
+					<div style="width:80%; margin:0 auto; background: #4caf50; height:2px"></div>
+					<p>Indice completo delle schede</p>
+					<p><span class="tags"><a href="schede/">Vai all'archivio</a></span></p>
+			</div>
+			<div class="table-col" style="text-align:center">
+				<div class="avatar-184" style="background-image:url('{{ base_url }}/assets/img/tags.jpg')"></div>
+					<h6>Argomenti</h6>
+					<div style="width:80%; margin:0 auto; background: #227799; height:2px"></div>
+					<p>Indice degli argomenti presenti</p>
+					<p><span class="tags"><a href="schede/indice_degli_argomenti">Leggi l'elenco</a></span></p>
+					
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+
+
+			<div style=" padding-top:3em; padding-bottom:3em; ;color:#fff; background-size:100%; position:relative">
+		<div style="position:absolute; top:0; left:0;width:100%; height:100%; background-color:#DB4437; opacity:0.75"></div>
+		<div style="position:relative; z-index:10">
+		        {% include 'modular/twocols.html.twig' with {'page': page.find('/contatti/_collabora/')} %}
+
+		        <!--
+			<div class="table-container">
+				<div class="table-col">
+					<h2>Collabora</h2>
+				</div>
+				<div class="table-col">
+					<p>Puoi proporre la tua collaborazione o richiedere maggiori informazioni compilando il modulo oppure via email.</p>
+					<div>
+						<span class="tags"><a target="_blank" href="https://drive.google.com/open?id=1O-__AI7TnHfQaRuSnrigkmkd21QK9P6ajS6PPBmiB4o" style="background:rgba(255,255,255,.75);  color:#ff6600; font-weight:bold; letter-spacing:0.1em; padding:1em; margin:1em">Collabora</a></span>
+						<span class="tags"><a style="background:rgba(255,255,255,.1);  color:#fff; letter-spacing:0.1em; padding:1em; margin:1em" href="mailto:{{ site.author.email }}">Invia Email</a></span>
+					</div>
+				</div>
+			</div>
+			-->
+		
+		</div>
 	</div>
 
+<div  style=" padding-top:1em; padding-bottom:2em; background-color:#fff; position:relative">
+	<div style="position:absolute; top:0; left:0;width:100%; height:100%; background-color:#fff; opacity:0.95"></div>
+		<div style="position:relative; z-index:10" id="progetto">
+			<!--QUI-->
+        {% include 'modular/twocols.html.twig' with {'page': page.find('/il-progetto/_impressum/')} %}
+<!--QUI-->
+		
 
+			
+        {% include 'modular/contributors.html.twig' with {'page': page.find('/il-progetto/_contributors/')} %}
+</div>
+	</div>
+	<div style=" padding-top:3em; padding-bottom:3em; ;color:#fff; background-size:100%; position:relative">
+		<div style="position:absolute; top:0; left:0;width:100%; height:100%; background-color:#ab47bc; opacity:0.75"></div>
+		<div style="position:relative; z-index:10">
+		{% include 'modular/twocols.html.twig' with {'page': page.find('/contatti/_contatti/')} %}
+		<!--
+			<div class="table-container">
+				<div class="table-col">
+					<h2>Contatti</h2>
+				</div>
+				<div class="table-col">
+                                    
+                                    <a style="padding:1em; width:64px; height:64px; border-radius:50%; background:#ccc"href="https://plus.google.com/u/0/111321209629895853779" target="_blank"><i class="fa fa-envelope"></i></a>
+                                    <a style="padding:1em; width:64px; height:64px; border-radius:50%; background:#ccc"href="https://plus.google.com/u/0/111321209629895853779" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a style="padding:1em; width:64px; height:64px; border-radius:50%; background:#ccc"href="https://plus.google.com/u/0/111321209629895853779" target="_blank"><i class="fa fa-google"></i></a>
+                                    <a style="padding:1em; width:64px; height:64px; border-radius:50%; background:#ccc"href="https://plus.google.com/u/0/111321209629895853779" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a style="padding:1em; width:64px; height:64px; border-radius:50%; background:#ccc"href="https://plus.google.com/u/0/111321209629895853779" target="_blank"><i class="fa fa-github"></i></a>
+				</div>
+			</div>
+		-->
+		</div>
+	</div>
+
+<!--
+		<div class="content-wrapper" style=" padding-top:3em; padding-bottom:3em; ;color:#fff; background-size:100%; position:relative">
+		<div style="position:absolute; top:0; left:0;width:100%; height:100%; background-color:#DB4437; opacity:0.75"></div>
+		<div style="position:relative; z-index:10">
+			<div class="table-container">
+				<div class="table-col">
+					<h2>Collabora</h2>
+				</div>
+				<div class="table-col">
+					<p>Puoi proporre la tua collaborazione o richiedere maggiori informazioni compilando il modulo oppure via email.</p>
+					<div>
+						<span class="tags"><a target="_blank" href="https://drive.google.com/open?id=1O-__AI7TnHfQaRuSnrigkmkd21QK9P6ajS6PPBmiB4o" style="background:rgba(255,255,255,.75);  color:#ff6600; font-weight:bold; letter-spacing:0.1em; padding:1em; margin:1em">Collabora</a></span>
+						<span class="tags"><a style="background:rgba(255,255,255,.1);  color:#fff; letter-spacing:0.1em; padding:1em; margin:1em" href="mailto:{{ site.author.email }}">Invia Email</a></span>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+	</div>
+-->
 
 <!--
 {% if config.plugins.taxonomylist.enabled %}

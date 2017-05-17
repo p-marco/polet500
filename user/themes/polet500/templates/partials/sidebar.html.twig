@@ -1,6 +1,10 @@
 {% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative~'/'~blog.slug) : blog.url %}
 {% set new_base_url = blog.url == '/' ? '' : blog.url %}
 
+<div style="background:#f2f2f2; padding:12px; border-radius:12px">
+<h4 style="text-align:center">Condividi</h4>
+{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}
+</div>
 {% if page.taxonomy.author %}
 <h3>Scheda</h3>
 
@@ -59,7 +63,7 @@
 <div class="sidebar-content">
     <h4>{{ 'Argomenti'|t }}</h4> 
     {% if page.taxonomy.tag %}
-        <ul  class="archives">
+        <ul  class="archives"  id="argList">
             {% for tag in page.taxonomy.tag  %}
             <li>
                 <a href="{{ blog.url|rtrim('/') }}/tag{{ config.system.param_sep }}{{ tag }}" class="p-category">
@@ -74,7 +78,7 @@
             {% endif %}
     <h4>{{ 'Personaggi'|t }}</h4> 
  {% if page.taxonomy.char %}
-        <ul  class="archives">
+        <ul  class="archives" id="charList">
             {% for char in page.taxonomy.char %}
             <li>
                 <a href="{{ blog.url|rtrim('/') }}/char{{ config.system.param_sep }}{{ char }}" class="p-category">
@@ -85,7 +89,7 @@
             {% endfor %}
         </ul>
          {% else %}         
-    {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'char'} %}
+    {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'char', filter: true, filterstart: 0, filterend: 5} %}
             {% endif %}
  
             </div>

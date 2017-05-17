@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp/htdocs/polet500/system/config/media.yaml',
-    'modified' => 1478499258,
+    'modified' => 1490373734,
     'data' => [
         'types' => [
             'defaults' => [
@@ -258,6 +258,11 @@ return [
                 'type' => 'file',
                 'thumb' => 'media/thumb-json.png',
                 'mime' => 'application/json'
+            ],
+            'csv' => [
+                'type' => 'file',
+                'thumb' => 'media/thumb-html.png',
+                'mime' => 'application/csv'
             ]
         ]
     ]

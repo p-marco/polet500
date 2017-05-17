@@ -1,0 +1,18 @@
+<div class="content-wrapper table-container">
+		{% if config.plugins.archives.enabled %}
+<div class="table-col" style="text-align:center">
+<div class="avatar-184"style="background-image: url('{{ base_url }}/assets/img/archive.jpg'); border-radius:50%; background-size:cover"></div>
+    <h4>{{ 'Archivio'|t }}</h4>
+					<div style="width:80%; margin:0 auto; background: #4caf50; height:2px"></div>
+    {% include 'partials/archives.html.twig' with {'base_url':new_base_url} %}
+</div>
+{% endif %}
+{% if config.plugins.simplesearch.enabled %}
+<div class="table-col" style="text-align:center">
+<div class="avatar-184" style="background-image: url('{{ base_url }}/assets/img/archive.jpg'); border-radius:50%; background-size:cover"></div>
+    <h4>{{ 'Cerca'|t }}</h4>
+					<div style="width:80%; margin:0 auto; background: #4caf50; height:2px"></div><br>
+    {% include 'partials/simplesearch_searchbox.html.twig' %}
+</div>
+{% endif %}
+</div>

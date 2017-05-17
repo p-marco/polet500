@@ -1,8 +1,13 @@
 <div class="search-wrapper">
-    <input class="search-input" type="text" placeholder="{{"Cerca"|t}}" value="{{ query }}" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
+<form action="{{ theme_dir }}/utils/search.php">
+    <input class="search-input" type="text" placeholder="{{"PLUGIN_SIMPLESEARCH.SEARCH_PLACEHOLDER"|t}}" value="{{ query }}" name="search-input" data-search-input="{{ base_url }}{{ config.plugins.simplesearch.route}}/query" />
     {% if config.plugins.simplesearch.display_button %}
         <button class="search-submit"><img src="{{ url('plugin://simplesearch/assets/search.svg') }}" /></button>
     {% endif %}
+        <input type="submit" class="search-submit">
+
+</form>
+
     <script>
     jQuery(document).ready(function($){
         $('.search-input').on('keypress', function(event) {

@@ -23,20 +23,24 @@
     {% endfor %}
 {% endmacro %}
 
-<ul class="navigation">
+{% if label %}<ul class="navigation archives">{% else %}<ul class="navigation">{% endif %}
+               <!--<li class="{{ current_page }}"><a href="">{{ page.title }}</a></li>-->
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
             {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
             <li class="{{ current_page }}">
+                {% if label %}<span class="label"></span>{% endif %}
                 <a href="{{ page.url }}">
                     {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
                     {{ page.menu }}
                 </a>
             </li>
         {% endfor %}
+
     {% endif %}
+
     {% for mitem in site.menu %}
         <li>
             <a href="{{ mitem.url }}">
@@ -48,5 +52,7 @@
     {% if config.plugins.login.enabled and grav.user.username %}
         <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
     {% endif %}
+    {% block navigationExtra %}
+    {% endblock %}
 </ul>
 

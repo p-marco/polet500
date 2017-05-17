@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1483646423,
-    'checksum' => 'b136526ad3731a7b38e3cb7f0baa6a3f',
+    'timestamp' => 1495008634,
+    'checksum' => '8bb74904e232ee9a18afee8d52d07ccb',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
@@ -34,6 +34,10 @@ return [
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
                 'modified' => 1478499270
+            ],
+            'plugins/facebook' => [
+                'file' => 'user/plugins/facebook/blueprints.yaml',
+                'modified' => 1480685796
             ],
             'plugins/feed' => [
                 'file' => 'user/plugins/feed/blueprints.yaml',
@@ -70,6 +74,10 @@ return [
             'plugins/sitemap' => [
                 'file' => 'user/plugins/sitemap/blueprints.yaml',
                 'modified' => 1478499274
+            ],
+            'plugins/socialbuttons' => [
+                'file' => 'user/plugins/socialbuttons/blueprints.yaml',
+                'modified' => 1447650826
             ],
             'plugins/taxonomylist' => [
                 'file' => 'user/plugins/taxonomylist/blueprints.yaml',
@@ -1912,6 +1920,270 @@ return [
                 'name' => 'plugins.error.routes.404',
                 'validation' => 'strict'
             ],
+            'plugins.facebook' => [
+                'form' => [
+                    'validation' => 'loose'
+                ],
+                'type' => '_root',
+                'form_field' => false
+            ],
+            'plugins.facebook.Basics' => [
+                'type' => 'section',
+                'underline' => false,
+                'name' => 'plugins.facebook.Basics',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.facebook.enabled',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.PostSettings' => [
+                'type' => 'section',
+                'underline' => true,
+                'name' => 'plugins.facebook.PostSettings',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings' => [
+                'type' => '_parent',
+                'name' => 'plugins.facebook.facebook_page_settings',
+                'form_field' => false
+            ],
+            'plugins.facebook.facebook_page_settings.section_title' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Title for Posts',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.section_title',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings.page_name' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Posts page name',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.page_name',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings.page_id' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Posts page ID',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.page_id',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings.date_format' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Post date format',
+                'default' => 'd.m.Y \\k\\l\\o H:i',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.date_format',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings.count' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Amount of posts to show',
+                'default' => 7,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1,
+                    'max' => 65535
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.count',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_page_settings.filter_by_tags' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Tag filter',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_page_settings.filter_by_tags',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.EventSettings' => [
+                'type' => 'section',
+                'underline' => true,
+                'name' => 'plugins.facebook.EventSettings',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_event_settings' => [
+                'type' => '_parent',
+                'name' => 'plugins.facebook.facebook_event_settings',
+                'form_field' => false
+            ],
+            'plugins.facebook.facebook_event_settings.section_title' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Title for Events',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_event_settings.section_title',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_event_settings.show_cover' => [
+                'type' => 'toggle',
+                'label' => 'Show Events Cover image',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.facebook.facebook_event_settings.show_cover',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_event_settings.page_name' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Events page name',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_event_settings.page_name',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_event_settings.events_page_id' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Events page ID',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_event_settings.events_page_id',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_event_settings.count' => [
+                'type' => 'text',
+                'size' => 'small',
+                'label' => 'Amount of events to show',
+                'default' => 7,
+                'validate' => [
+                    'type' => 'number',
+                    'min' => 1,
+                    'max' => 65535
+                ],
+                'name' => 'plugins.facebook.facebook_event_settings.count',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.AlbumSettings' => [
+                'type' => 'section',
+                'underline' => true,
+                'name' => 'plugins.facebook.AlbumSettings',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_album_settings' => [
+                'type' => '_parent',
+                'name' => 'plugins.facebook.facebook_album_settings',
+                'form_field' => false
+            ],
+            'plugins.facebook.facebook_album_settings.use_unitegallery' => [
+                'type' => 'toggle',
+                'label' => 'Use Unitegallery for Albums',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.facebook.facebook_album_settings.use_unitegallery',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_album_settings.album_name' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Album name',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_album_settings.album_name',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_album_settings.unitegallery_theme' => [
+                'type' => 'select',
+                'label' => 'Unitegallery Theme',
+                'size' => 'small',
+                'default' => 'default',
+                'options' => [
+                    'default' => 'default',
+                    'compact' => 'compact',
+                    'grid' => 'grid',
+                    'slider' => 'slider',
+                    'video' => 'video'
+                ],
+                'name' => 'plugins.facebook.facebook_album_settings.unitegallery_theme',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.CommonSettings' => [
+                'type' => 'section',
+                'underline' => true,
+                'name' => 'plugins.facebook.CommonSettings',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_common_settings' => [
+                'type' => '_parent',
+                'name' => 'plugins.facebook.facebook_common_settings',
+                'form_field' => false
+            ],
+            'plugins.facebook.facebook_common_settings.application_id' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Application ID',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_common_settings.application_id',
+                'validation' => 'loose'
+            ],
+            'plugins.facebook.facebook_common_settings.application_secret' => [
+                'type' => 'text',
+                'size' => 'large',
+                'label' => 'Application secret',
+                'default' => '',
+                'validate' => [
+                    'type' => 'string'
+                ],
+                'name' => 'plugins.facebook.facebook_common_settings.application_secret',
+                'validation' => 'loose'
+            ],
             'plugins.feed' => [
                 'form' => [
                     'validation' => 'strict'
@@ -2654,6 +2926,396 @@ return [
                 'name' => 'plugins.sitemap.ignores',
                 'validation' => 'strict'
             ],
+            'plugins.socialbuttons' => [
+                'form' => [
+                    
+                ],
+                'type' => '_root',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.enabled'
+            ],
+            'plugins.socialbuttons.buttons' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.facebook' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.facebook',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.facebook.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Facebook button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.facebook.enabled'
+            ],
+            'plugins.socialbuttons.buttons.facebook.label' => [
+                'type' => 'text',
+                'label' => 'Facebook button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.facebook.label'
+            ],
+            'plugins.socialbuttons.buttons.twitter' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.twitter',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.twitter.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Twitter button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.twitter.enabled'
+            ],
+            'plugins.socialbuttons.buttons.twitter.label' => [
+                'type' => 'text',
+                'label' => 'Twitter button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.twitter.label'
+            ],
+            'plugins.socialbuttons.buttons.googleplus' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.googleplus',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.googleplus.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Google plus button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.googleplus.enabled'
+            ],
+            'plugins.socialbuttons.buttons.googleplus.label' => [
+                'type' => 'text',
+                'label' => 'Google plus button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.googleplus.label'
+            ],
+            'plugins.socialbuttons.buttons.linkedin' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.linkedin',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.linkedin.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Linkedin button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.linkedin.enabled'
+            ],
+            'plugins.socialbuttons.buttons.linkedin.label' => [
+                'type' => 'text',
+                'label' => 'Linkedin button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.linkedin.label'
+            ],
+            'plugins.socialbuttons.buttons.reddit' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.reddit',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.reddit.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Reddit button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.reddit.enabled'
+            ],
+            'plugins.socialbuttons.buttons.reddit.label' => [
+                'type' => 'text',
+                'label' => 'Reddit button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.reddit.label'
+            ],
+            'plugins.socialbuttons.buttons.youtube' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.youtube',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.youtube.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Youtube button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.youtube.enabled'
+            ],
+            'plugins.socialbuttons.buttons.youtube.label' => [
+                'type' => 'text',
+                'label' => 'Youtube button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.youtube.label'
+            ],
+            'plugins.socialbuttons.buttons.hackernews' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.hackernews',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.hackernews.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Hackernews button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.hackernews.enabled'
+            ],
+            'plugins.socialbuttons.buttons.hackernews.label' => [
+                'type' => 'text',
+                'label' => 'Hackernews button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.hackernews.label'
+            ],
+            'plugins.socialbuttons.buttons.pinterest' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.pinterest',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.pinterest.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Pinterest button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.pinterest.enabled'
+            ],
+            'plugins.socialbuttons.buttons.pinterest.label' => [
+                'type' => 'text',
+                'label' => 'Pinterest button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.pinterest.label'
+            ],
+            'plugins.socialbuttons.buttons.pocket' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.pocket',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.pocket.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Pocket button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.pocket.enabled'
+            ],
+            'plugins.socialbuttons.buttons.pocket.label' => [
+                'type' => 'text',
+                'label' => 'Pocket button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.pocket.label'
+            ],
+            'plugins.socialbuttons.buttons.tumblr' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.tumblr',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.tumblr.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Tumblr button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.tumblr.enabled'
+            ],
+            'plugins.socialbuttons.buttons.tumblr.label' => [
+                'type' => 'text',
+                'label' => 'Tumblr button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.tumblr.label'
+            ],
+            'plugins.socialbuttons.buttons.vk' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.vk',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.vk.enabled' => [
+                'type' => 'toggle',
+                'label' => 'VK button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.vk.enabled'
+            ],
+            'plugins.socialbuttons.buttons.vk.label' => [
+                'type' => 'text',
+                'label' => 'VK button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.vk.label'
+            ],
+            'plugins.socialbuttons.buttons.github' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.github',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.github.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Github button',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.github.enabled'
+            ],
+            'plugins.socialbuttons.buttons.github.label' => [
+                'type' => 'text',
+                'label' => 'Github button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.github.label'
+            ],
+            'plugins.socialbuttons.buttons.email' => [
+                'type' => '_parent',
+                'name' => 'plugins.socialbuttons.buttons.email',
+                'form_field' => false
+            ],
+            'plugins.socialbuttons.buttons.email.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Email button',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.email.enabled'
+            ],
+            'plugins.socialbuttons.buttons.email.label' => [
+                'type' => 'text',
+                'label' => 'Email button label',
+                'highlight' => 1,
+                'validate' => [
+                    'type' => 'text'
+                ],
+                'name' => 'plugins.socialbuttons.buttons.email.label'
+            ],
             'plugins.taxonomylist' => [
                 'form' => [
                     'validation' => 'strict'
@@ -2895,6 +3557,38 @@ return [
                         404 => 'plugins.error.routes.404'
                     ]
                 ],
+                'facebook' => [
+                    'Basics' => 'plugins.facebook.Basics',
+                    'enabled' => 'plugins.facebook.enabled',
+                    'PostSettings' => 'plugins.facebook.PostSettings',
+                    'facebook_page_settings' => [
+                        'section_title' => 'plugins.facebook.facebook_page_settings.section_title',
+                        'page_name' => 'plugins.facebook.facebook_page_settings.page_name',
+                        'page_id' => 'plugins.facebook.facebook_page_settings.page_id',
+                        'date_format' => 'plugins.facebook.facebook_page_settings.date_format',
+                        'count' => 'plugins.facebook.facebook_page_settings.count',
+                        'filter_by_tags' => 'plugins.facebook.facebook_page_settings.filter_by_tags'
+                    ],
+                    'EventSettings' => 'plugins.facebook.EventSettings',
+                    'facebook_event_settings' => [
+                        'section_title' => 'plugins.facebook.facebook_event_settings.section_title',
+                        'show_cover' => 'plugins.facebook.facebook_event_settings.show_cover',
+                        'page_name' => 'plugins.facebook.facebook_event_settings.page_name',
+                        'events_page_id' => 'plugins.facebook.facebook_event_settings.events_page_id',
+                        'count' => 'plugins.facebook.facebook_event_settings.count'
+                    ],
+                    'AlbumSettings' => 'plugins.facebook.AlbumSettings',
+                    'facebook_album_settings' => [
+                        'use_unitegallery' => 'plugins.facebook.facebook_album_settings.use_unitegallery',
+                        'album_name' => 'plugins.facebook.facebook_album_settings.album_name',
+                        'unitegallery_theme' => 'plugins.facebook.facebook_album_settings.unitegallery_theme'
+                    ],
+                    'CommonSettings' => 'plugins.facebook.CommonSettings',
+                    'facebook_common_settings' => [
+                        'application_id' => 'plugins.facebook.facebook_common_settings.application_id',
+                        'application_secret' => 'plugins.facebook.facebook_common_settings.application_secret'
+                    ]
+                ],
                 'feed' => [
                     'enabled' => 'plugins.feed.enabled',
                     'limit' => 'plugins.feed.limit',
@@ -2985,6 +3679,63 @@ return [
                     'enabled' => 'plugins.sitemap.enabled',
                     'route' => 'plugins.sitemap.route',
                     'ignores' => 'plugins.sitemap.ignores'
+                ],
+                'socialbuttons' => [
+                    'enabled' => 'plugins.socialbuttons.enabled',
+                    'buttons' => [
+                        'facebook' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.facebook.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.facebook.label'
+                        ],
+                        'twitter' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.twitter.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.twitter.label'
+                        ],
+                        'googleplus' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.googleplus.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.googleplus.label'
+                        ],
+                        'linkedin' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.linkedin.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.linkedin.label'
+                        ],
+                        'reddit' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.reddit.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.reddit.label'
+                        ],
+                        'youtube' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.youtube.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.youtube.label'
+                        ],
+                        'hackernews' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.hackernews.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.hackernews.label'
+                        ],
+                        'pinterest' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.pinterest.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.pinterest.label'
+                        ],
+                        'pocket' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.pocket.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.pocket.label'
+                        ],
+                        'tumblr' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.tumblr.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.tumblr.label'
+                        ],
+                        'vk' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.vk.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.vk.label'
+                        ],
+                        'github' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.github.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.github.label'
+                        ],
+                        'email' => [
+                            'enabled' => 'plugins.socialbuttons.buttons.email.enabled',
+                            'label' => 'plugins.socialbuttons.buttons.email.label'
+                        ]
+                    ]
                 ],
                 'taxonomylist' => [
                     'enabled' => 'plugins.taxonomylist.enabled',

@@ -27,7 +27,7 @@ class __TwigTemplate_d4a2aaa81c05687aa784db9a240da79b3f029d20ae94d6acd4884b80593
         // line 5
         if (((twig_length_filter($this->env, (isset($context["crumbs"]) ? $context["crumbs"] : null)) > 1) || $this->getAttribute((isset($context["breadcrumbs_config"]) ? $context["breadcrumbs_config"] : null), "show_all", array()))) {
             // line 6
-            echo "<div id=\"breadcrumbs\" itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
+            echo "<span id=\"breadcrumbs\" itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
     ";
             // line 7
             if ($this->getAttribute((isset($context["breadcrumbs_config"]) ? $context["breadcrumbs_config"] : null), "icon_home", array())) {
@@ -116,7 +116,7 @@ class __TwigTemplate_d4a2aaa81c05687aa784db9a240da79b3f029d20ae94d6acd4884b80593
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['crumb'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 26
-            echo "</div>
+            echo "</span>
 ";
         }
     }
@@ -143,7 +143,7 @@ class __TwigTemplate_d4a2aaa81c05687aa784db9a240da79b3f029d20ae94d6acd4884b80593
 {% set divider = breadcrumbs_config.icon_divider_classes %}
 
 {% if crumbs|length > 1 or breadcrumbs_config.show_all %}
-<div id=\"breadcrumbs\" itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
+<span id=\"breadcrumbs\" itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
     {% if breadcrumbs_config.icon_home %}
     <i class=\"{{ breadcrumbs_config.icon_home }}\"></i>
     {% endif %}
@@ -163,7 +163,7 @@ class __TwigTemplate_d4a2aaa81c05687aa784db9a240da79b3f029d20ae94d6acd4884b80593
             {% endif %}
         {% endif %}
     {% endfor %}
-</div>
+</span>
 {% endif %}
 ";
     }

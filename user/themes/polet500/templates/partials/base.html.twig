@@ -9,13 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
+ <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet"> 
 
 <!--Open Graph-->
 <meta property="og:site_name" content="{{ site.title|e('html') }}">
 <meta name="og:title" property="og:title" content="{% if header.title %}{{ header.title|e('html') }}{% else %}{{ site.metadata.title|e('html') }}{% endif %}" />
+<meta name="og:description" property="og:description" content="{% if header.metadata.description %}{{ header.metadata.description|e('html') }}{% else %}{{ site.metadata.description|e('html') }}{% endif %}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="{{ page.url }}" />
-<meta property="og:image" content="{{ theme_url }}/images/banner.jpg" />
+
 {% if page.taxonomy.date %}
 <meta property="article:published_time" content="{% for date in page.taxonomy.date %}{{ date }}{% endfor %}">
 {% endif %}
@@ -30,7 +32,7 @@
         {% do assets.addCss('theme://css-compiled/template.css', 101) %}
         {% do assets.addCss('theme://css/custom.css', 100) %}
         {% do assets.addCss('theme://css/font-awesome.min.css', 100) %}
-        {% do assets.addCss('theme://css/slidebars.min.css') %}
+       {% do assets.addCss('theme://css/slidebars.min.css') %}
         {% do assets.addCss('theme://css/polet500.css') %}
 
         {% if browser.getBrowser == 'msie' and browser.getVersion == 10 %}
@@ -40,9 +42,16 @@
             {% do assets.addCss('theme://css/nucleus-ie9.css') %}
             {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
         {% endif %}
+        {% if browser.getBrowser == 'msie' and browser.getVersion <= 8  %}
+            <style>
+                    .navigation-bar {position:relative !important;}
+
+            </style>
+        {% endif %}
     {% endblock %}
     {{ assets.css() }}
 <!--JS-->
+<!--
     {% block javascripts %}
         {% do assets.addJs('theme://js/jquery.min.js', 100) %}
         {% do assets.addJs('theme://js/modernizr.custom.71422.js', 100) %}
@@ -51,69 +60,73 @@
     {% endblock %}
     {{ assets.js() }}
 <script type="text/javascript" src="http://cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>
+-->
 {% endblock head %}
 </head>
 <body id="top" class="{{ page.header.body_classes ?: 'modular header-image fullwidth' }}">
-    <div id="sb-site">
-        {% block header %}
-        <header id="header">
-            <div id="logo">
-                <h3><a href="{{ base_url == '' ? '/' : base_url }}"> {{ config.site.title }}</a></h3>
-            </div>
-            <div id="navbar">
-                {% block header_extra %}{% endblock %}
-                {% if config.plugins.langswitcher.enabled %}
-                {% include 'partials/langswitcher.html.twig' %}
-                {% endif %}
-                {% block header_navigation %}
-                {% include 'partials/navigation.html.twig' %}
-                {% endblock %}
-                <span class="panel-activation sb-toggle-left navbar-left menu-btn fa fa-bars"></span>
-            </div>
-        </header>
-        {% endblock %}
 
-        {% block showcase %}{% endblock %}
 
+{% include "partials/navigation_menu.html.twig" %}
+<div style="background:#eee; position:relative; z-index:10">
+{% include "partials/breadcrumbs.html.twig" %}
+</div>    
         {% block body %}
         <section id="body" class="{{ class }}">
             {% block content %}{% endblock %}
         </section>
         {% endblock %}
-<div class="totop label--round btn-sm" style="text-align:center; margin-bottom:1em">
-              <span class="">  <a href="#" id="toTop"><i class="fa fa-arrow-up"></i></a></span>
-            </div>
+       
         {% block footer %}
         <footer id="footer">
       
         <div class="table-container">
                 <div class="table-col">
-                <h6>Navigazione</h6>
-               
+                <h5>Navigazione</h5>
+               {% set label = 'true' %}
                 {% include 'partials/navigation.html.twig' %}
             </div>
             <div class="table-col">
-                <h6>Indici</h6>
-                <ul>
-                    <li><a href="{{ base_url }}/testi/">Indice delle schede</a></li>
+                <h5>Indici</h5>
+                <ul class="archives">
+                    <li><span class="label"><i class="fa fa-file-text-o"></i></span><a href="{{ base_url }}/schede/">Indice delle schede</a></li>
+                    <li><span class="label"></span><a href="{{ base_url }}/schede/indice_degli_argomenti">Indice degli argomenti</a></li>
+                    <li><span class="label"></span><a href="{{ base_url }}/schede/indice_dei_personaggi">Indice dei personaggi</a></li>
                     <!--<li>Indice degli argomenti</li>-->
                     <!--<li>Indice delle persone</li>-->
                 </ul> 
                
             </div>
             <div class="table-col">
-                <h6>Social</h6>
+                <h5>Social</h5>
                     <div>
-                            <ul>
-                                <li><a href="https://facebook.com/polet500" target="_blank">Facebook</a></li>
-                                <li><a href="https://plus.google.com/u/0/111321209629895853779" target="_blank">Google+</a></li>
+                            <ul class="archives">
+                                <li>
+                                    <span class="label"><i class="fa fa-facebook"></i></span>
+                                    <a href="https://facebook.com/polet500" target="_blank">Facebook</a>
+                                </li>
+                                <li>
+                                    <span class="label"><i class="fa fa-twitter"></i></span>
+                                    <a href="https://twitter.com/polet500/PoLet500" target="_blank">Twitter</a>
+                                </li>
+                                <li>
+                                    <span class="label"><i class="fa fa-google"></i></span>
+                                    <a href="https://plus.google.com/u/0/111321209629895853779" target="_blank">Google+</a>
+                                    </li>
+                                <li>
+                                    <span class="label"><i class="fa fa-github"></i></span>
+                                    <a href="https://github.com/p-marco/polet500" target="_blank">Github</a>
+                                </li>
+                                
                             </ul>
                         </div>
-                    <h6>Links</h6>
+                    </div>
+                    <div class="table-col">
+                    <h5>Links</h5>
                     <div>
-                            <ul>
-                                <li>Feeds: <a class="" href="{{ base_url }}{{ feed_url }}/schede/.rss"> RSS</a> | <a class="" href="{{ base_url }}{{ feed_url }}/schede/.atom"> ATOM</a></li>
-                                <li><a href="{{ base_url }}/sitemap/">Mappa del sito</a></li>
+                            <ul class="archives">
+                                <li><span class="label"><i class="fa fa-android"></i></span><a href="https://play.google.com/store/apps/details?id=appinventor.ai_antonello_f_caterino.PoLet500&hl=en" target="_blank">App per Android</a></li>
+                                <li><span class="label"><i class="fa fa-feed"></i></span>Feeds: <a class="" href="{{ base_url }}{{ feed_url }}/schede/.rss"> RSS</a> | <a class="" href="{{ base_url }}{{ feed_url }}/schede/.atom"> ATOM</a></li>
+                                <li><span class="label"><i class="fa fa-sitemap"></i></span><a href="{{ base_url }}/sitemap/">Mappa del sito</a></li>
                             </ul>
                         </div>
                 </div>
@@ -121,11 +134,10 @@
 
         <HR>
 
-          <p style=" text-align:left; font-weight:bold; color:#666 ">2016 - 2017 | {{ site.metadata.title }} <span class="tags"><a href="{{ base_url }}/chi-siamo"> Scopri di più</a></span>
+          <p class="text-xs-left">2016 - 2017 | {{ site.metadata.title }} <span class="tags"><a href="{{ base_url }}/il-progetto"> Scopri di più</a></span>
           </p>
         <!--Messy code to fix: separate data and presentation-->
-        <small class="text-muted">Installa l'app per Android <a href="https://play.google.com/store/apps/details?id=appinventor.ai_antonello_f_caterino.PoLet500&hl=en"> cliccando qui.</small>
-        <br>
+        
     
 
         </footer>

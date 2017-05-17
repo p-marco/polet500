@@ -1,4 +1,4 @@
-<div class="list-item h-entry">
+<div class="list-item h-entry ">
 
     {% set header_image = page.header.header_image|defined(true) %}
     {% set header_image_width  = page.header.header_image_width|defined(900) %}
@@ -7,22 +7,40 @@
 
     <div class="list-blog-header">
         
-        
+        <p style="font-size:14px;">By <span style="font-weight:bold">{{ page.header.taxonomy.author }}</span> on <span style="font-weight:bold">{{ page.header.taxonomy.date }} </span></p>
         {% if page.header.link %}
             <h2 class="p-name">
                 {% if page.header.continue_link is not sameas(false) %}
                 <a href="{{ page.url }}"><i class="fa fa-angle-double-right u-url"></i></a>
                 {% endif %}
-                <a href="{{ page.header.link }}" class="u-url">{{ page.title }}</a>
             </h2>
         {% else %}
-            <h2 class="p-name"><a href="{{ page.url }}" class="u-url"> {{ page.title }}</a></h2>
+            <h2 class="p-name"><span class="tags">{{ page.header.taxonomy.chronology }}</span><br><a href="{{ page.url }}" class="u-url"> {{ page.title }}</a></h2>
         {% endif %}
+        <a href="{{ page.url }}"><img src="{{ page.header.metadata.image }}"></img></a>
+            <p class="text-uppercase">{{ page.header.metadata.description }}</p>
+            <div class="table-container">    
+            <div class="table-col">
+                <div style="display:inline-block; margin-right:16px; height:32px; width:32px; background-image:url('{{ base_url }}/assets/img/tags.jpg'); border-radius:50%; background-size:cover">
+                </div>
+                <span class=""><a>{{ page.header.taxonomy.tag | length}} Argomenti</a></span>
+            </div><div class="table-col">
+                <div style="display:inline-block; margin-right:16px; height:32px; width:32px; background-image:url('{{ base_url }}/assets/img/char.jpg'); border-radius:50%; background-size:cover">
+                </div>
+                <span class=""><a>{{ page.header.taxonomy.char | length}} Personaggi</a></span>
+            </div>
+            <div class="table-col">
+                <div style="display:inline-block; margin-right:16px; height:32px; width:32px; background-image:url('{{ base_url }}/assets/img/archive.jpg'); border-radius:50%; background-size:cover">
+                </div>
+                <span class=""><a>{{ page.header.taxonomy.bibliography | length}} Riferimenti</a></span>
+            </div>
+        </div>
+            <div class="sharer" style="line-height:2; text-align:center; font-size:1.5em; padding-top:0.2em; padding-bottom:1em" id="{{ page.metadata.date }}-share">{% include 'partials/socialbuttons.html.twig' with {'url' : page.url} %}</div>
 
     </div>
 
-    <div class="list-blog-padding">
-
+    <div class="list-blog-padding" >
+        
     {% if page.header.continue_link is sameas(false) %}
         <div class="e-content">        
             {{ page.content }}
@@ -32,9 +50,14 @@
         {% endif %}
     {% elseif truncate and page.summary != page.content %}
         <div class="p-summary e-content">
-            {{ page.summary }}
-            <p><a href="{{ page.url }}">{{ 'Leggi la scheda completa'|t }}</a></p>
-        </div>
+        
+        
+            <p><span class="tags tags-bg bg-primary">
+                <a href="{{ page.url }}">
+                <i class="fa fa-arrow-right"></i>
+                {{ 'Leggi la scheda completa'|t }}
+                </a>
+            </span></p>
     {% elseif truncate %}
         <div class="p-summary e-content">
             {% if page.summary != page.content %}
@@ -42,129 +65,25 @@
                 </div>
             {% else %}
 
+
+
                     {{ page.content }}
                 
             {% endif %}
 
             <p><a href="{{ page.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a></p>
-        </div>
     {% else %}
    
-        <div class="e-content">
+        <div class="e-content"  id="content">
             {{ page.content }}
         </div>
-  <h4>{{ 'Riferimenti'|t }}</h4> 
-    <style>
-        .text-uppercase {  font-weight:bold}
-        .text-em {font-style:italic}
-        .text-lowercase {text-transform:lowercase}
-        .label-border {background:none; border: 2px solid #227799}
-    </style>
-        <ul  class="archives">
-            <h5><span class="label">B</span>Bibliografia</h5>
-            {% for bibliography in page.taxonomy.bibliography if bibliography.Categoria=='Bibliografia' %}
-            <li>
-                <span class="label label-border"></span>
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
-                        {{ bibliography.Autore }}
-                    </a>
-                </span>,
-                <span class="">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
-                        {{ bibliography.Data }}
-                    </a>
-                </span>,,
-                <span class="text-em">{{ bibliography.Titolo }}</span>,
-                <span class="">{{ bibliography.Editore }}</span>,
-                <span class="">{{ bibliography.Luogo }}</span> 
-                {% if bibliography.Pagine %}
-                ,
-                    <span class="text-lowercase">pp. {{ bibliography.Pagine }}</span> 
-                {% endif %}
-                .
-                <a href="{{ bibliography.Link }}" target="_blank">
-                    <i class="fa fa-external-link" aria-hidden="true"></i>
-                </a>
-
-            </li>            
-            {% endfor %}
-        </ul>
-        <h5>Fonti</h5>
-        <ul  class="archives">
-            <h6><span class="label">E</span>Epistolari</h6>
-            {% for bibliography in page.taxonomy.bibliography if bibliography.Tipologia=='Epistolare' %}
-            <li>
-                <span class="label label-border"></span>
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
-                        {{ bibliography.Autore }}
-                    </a>
-                </span> - 
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Destinatario }}">
-                        {{ bibliography.Destinatario }}
-                    </a>
-                </span>, ,
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
-                        {{ bibliography.Data }}
-                    </a>
-                </span>,
-                <span class="text-em">{{ bibliography.Titolo }}</span>
-                <a href="{{ bibliography.Link }}" target="_blank">
-                    <i class="fa fa-external-link" aria-hidden="true"></i>
-                </a>
-            </li>            
-            {% endfor %}
-        </ul>
-        <ul  class="archives">
-                <h6><span class="label">P</span>Poetiche</h6>
-
-            {% for bibliography in page.taxonomy.bibliography if bibliography.Tipologia=='Poetica' %}
-            <li>
-                <span class="label label-border"></span>
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
-                        {{ bibliography.Autore }}
-                    </a>
-                </span>,
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Data }}">
-                        {{ bibliography.Data }}
-                    </a>
-                </span>,
-                <span class="text-em">{{ bibliography.Titolo }}</span>
-                <a href="{{ bibliography.Link }}" target="_blank">
-                    <i class="fa fa-external-link" aria-hidden="true"></i>
-                </a>
-            </li>            
-            {% endfor %}
-        </ul>
-        <ul  class="archives">
-            <h6><span class="label">S</span>Storiche</h6>
-            {% for bibliography in page.taxonomy.bibliography|sort_by_key('Data') if bibliography.Tipologia=='Storica' %}
-            <li>
-                    <span class="label label-border"></span>
-                <span class="text-uppercase">
-                    <a href="{{ blog.url|rtrim('/') }}/bibliography{{ config.system.param_sep }}{{ bibliography.Autore }}">
-                        {{ bibliography.Autore }}
-                    </a>
-                </span>,
-                <span class="">{{ bibliography.Data }}</span>,
-                <span class="text-em">{{ bibliography.Titolo }}</span>
-                <a href="{{ bibliography.Link }}" target="_blank">
-                    <i class="fa fa-external-link" aria-hidden="true"></i>
-                </a>
-            </li>            
-            {% endfor %}
-        </ul>
-        {% if config.plugins.comments.enabled %}
-            {% include 'partials/comments.html.twig' %}
-        {% endif %}
+    
 
         {% set show_prev_next = true %}
     {% endif %}
 
+
     </div>
 </div>
+</div>
+

@@ -2,16 +2,21 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => 'C:/xampp/htdocs/polet500/user/plugins/simplesearch/simplesearch.yaml',
-    'modified' => 1478499272,
+    'modified' => 1490274995,
     'data' => [
-        'enabled' => true,
+        'enabled' => false,
         'built_in_css' => true,
-        'display_button' => false,
+        'display_button' => true,
         'min_query_length' => 3,
         'route' => '/search',
         'template' => 'simplesearch_results',
         'filters' => [
-            'category' => 'blog'
+            0 => [
+                'category' => 'blog'
+            ],
+            1 => [
+                '@taxonomy' => false
+            ]
         ],
         'filter_combinator' => 'and',
         'order' => [

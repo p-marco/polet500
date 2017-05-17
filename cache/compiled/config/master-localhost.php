@@ -1,17 +1,21 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1483646423,
-    'checksum' => '37d0e0d5a0dee636964f69b3e58bb401',
+    'timestamp' => 1495008634,
+    'checksum' => 'd953e6413a11c0f8face4b654120b00a',
     'files' => [
         'user/config' => [
+            'media' => [
+                'file' => 'user/config/media.yaml',
+                'modified' => 1490374085
+            ],
             'security' => [
                 'file' => 'user/config/security.yaml',
                 'modified' => 1478942930
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1483623363
+                'modified' => 1490264091
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
@@ -21,7 +25,7 @@ return [
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1478499258
+                'modified' => 1490373734
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
@@ -49,6 +53,10 @@ return [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1478499270
             ],
+            'plugins/facebook' => [
+                'file' => 'user/plugins/facebook/facebook.yaml',
+                'modified' => 1484921717
+            ],
             'plugins/feed' => [
                 'file' => 'user/plugins/feed/feed.yaml',
                 'modified' => 1478499270
@@ -75,11 +83,15 @@ return [
             ],
             'plugins/simplesearch' => [
                 'file' => 'user/plugins/simplesearch/simplesearch.yaml',
-                'modified' => 1478499272
+                'modified' => 1490274995
             ],
             'plugins/sitemap' => [
                 'file' => 'user/plugins/sitemap/sitemap.yaml',
                 'modified' => 1478499274
+            ],
+            'plugins/socialbuttons' => [
+                'file' => 'user/plugins/socialbuttons/socialbuttons.yaml',
+                'modified' => 1447650826
             ],
             'plugins/taxonomylist' => [
                 'file' => 'user/plugins/taxonomylist/taxonomylist.yaml',
@@ -122,6 +134,12 @@ return [
                 'routes' => [
                     404 => '/error'
                 ]
+            ],
+            'facebook' => [
+                'enabled' => true,
+                'built_in_css' => true,
+                'use_unitegallery_plugin' => true,
+                'page_id' => '223755358030036'
             ],
             'feed' => [
                 'enabled' => true,
@@ -206,14 +224,19 @@ return [
                 ]
             ],
             'simplesearch' => [
-                'enabled' => true,
+                'enabled' => false,
                 'built_in_css' => true,
-                'display_button' => false,
+                'display_button' => true,
                 'min_query_length' => 3,
                 'route' => '/search',
                 'template' => 'simplesearch_results',
                 'filters' => [
-                    'category' => 'blog'
+                    0 => [
+                        'category' => 'blog'
+                    ],
+                    1 => [
+                        '@taxonomy' => false
+                    ]
                 ],
                 'filter_combinator' => 'and',
                 'order' => [
@@ -227,6 +250,63 @@ return [
                 'ignores' => [
                     0 => '/blog/blog-post-to-ignore',
                     1 => '/ignore-this-route'
+                ]
+            ],
+            'socialbuttons' => [
+                'enabled' => true,
+                'buttons' => [
+                    'facebook' => [
+                        'enabled' => true,
+                        'label' => 'Facebook'
+                    ],
+                    'twitter' => [
+                        'enabled' => true,
+                        'label' => 'Twitter'
+                    ],
+                    'googleplus' => [
+                        'enabled' => true,
+                        'label' => 'Google+'
+                    ],
+                    'linkedin' => [
+                        'enabled' => true,
+                        'label' => 'Linkedin'
+                    ],
+                    'reddit' => [
+                        'enabled' => true,
+                        'label' => 'Reddit'
+                    ],
+                    'youtube' => [
+                        'enabled' => false,
+                        'label' => 'Youtube'
+                    ],
+                    'hackernews' => [
+                        'enabled' => false,
+                        'label' => 'Hackernews'
+                    ],
+                    'pinterest' => [
+                        'enabled' => false,
+                        'label' => 'Pinterest'
+                    ],
+                    'pocket' => [
+                        'enabled' => false,
+                        'label' => 'Pocket'
+                    ],
+                    'tumblr' => [
+                        'enabled' => false,
+                        'label' => 'Tumblr'
+                    ],
+                    'vk' => [
+                        'enabled' => false,
+                        'label' => 'VK'
+                    ],
+                    'github' => [
+                        'enabled' => false,
+                        'label' => 'Github'
+                    ],
+                    'email' => [
+                        'enabled' => true,
+                        'label' => 'Email'
+                    ]
                 ]
             ],
             'taxonomylist' => [
@@ -489,6 +569,11 @@ return [
                     'type' => 'file',
                     'thumb' => 'media/thumb-json.png',
                     'mime' => 'application/json'
+                ],
+                'csv' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb.png',
+                    'mime' => 'application/csv'
                 ]
             ]
         ],
@@ -496,7 +581,7 @@ return [
             'title' => 'PoLet500',
             'author' => [
                 'name' => 'Polemiche Letterarie del Cinquecento',
-                'email' => 'polemicheletterarie@gmail.com'
+                'email' => 'polet500@nuovorinascimento.org'
             ],
             'taxonomies' => [
                 0 => 'category',
@@ -524,7 +609,7 @@ return [
                 '/another/one/(.*)' => '/testi/$1'
             ],
             'blog' => [
-                'route' => '/testi/'
+                'route' => ''
             ]
         ],
         'streams' => [

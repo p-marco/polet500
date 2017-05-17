@@ -1,0 +1,45 @@
+<div class="flex-col text-xs-center">
+	<div class="table-row">
+		<div 
+			class="bg-cover avatar-128 round" style=" background-color:#ccc; 
+			background-image: url('{{ page.url }}/{{ page.header.Image }}');  ">
+		</div>
+	</div>
+	<div class="table-row">
+		<h6>{{ page.header.Name }}</h6>
+		<div style="width:80%; margin:0 auto; {% if page.header.Color %} background: {{ page.header.Color }} {% else %} background: #4caf50 {% endif %}; height:2px"></div>
+		<p>{{ page.header.Role }}</p>
+		{% if not (page.header.Schede) %}
+		<p>
+			<span class="tags"><a href="{{ site.url }}/polet500/schede/author:{{ page.header.Name }}">Consulta le schede</a></span>
+		</p>
+		{% endif %}
+		<p>
+			{% if page.header.Email %}
+			<span><a href="mailto:{{ page.header.Email }}"><i class="fa fa-envelope"></i></a></span>
+			{% endif %}
+
+			{% if page.header.Academia %}
+			<span><a href="{{ page.header.Academia }}"><i class="fa fa-graduation-cap"></i></a></span>
+			{% endif %}
+
+			{% if page.header.University %}
+			<span><a href="{{ page.header.University }}"><i class="fa fa-university"></i></a></span>
+			{% endif %}
+
+			{% if page.header.Linkedin %}
+			<span><a href="{{ page.header.Linkedin }}"><i class="fa fa-linkedin"></i></a></span>
+			{% endif %}
+
+			{% if page.header.Facebook %}
+			<span><a href="{{ page.header.Facebook }}"><i class="fa fa-facebook"></i></a></span>
+			{% endif %}
+			{% if page.header.GitHub %}
+				<span><a href="{{ page.header.GitHub }}"><i class="fa fa-github"></i></a></span>
+			{% endif %}
+			{% if page.header.Homepage %}
+				<span><a href="{{ page.header.Homepage }}"><i class="fa fa-globe"></i></a></span>
+			{% endif %}
+		</p>	
+	</div>
+</div>

@@ -1,5 +1,10 @@
 ---
 title: Polemica Bembo-Brocardo
+metadata:
+	description: La polemica Bembo-Brocardo è una delle più controverse querelle del primo Cinquecento, e vede contrapposti Antonio Brocardo e il Bembo per ragioni retoriche.
+	og:image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
+	image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
+	keywords: polemiche letterarie, pietro bembo, antonio brocardo, letteratura italiana del cinquecento
 taxonomy:
 	category: blog
     tag: [Divergenze di natura poetica, diverse concezioni del classicismo, probabile coinvolgimento di fattori personali o politici]
@@ -15,7 +20,7 @@ taxonomy:
 	    Destinatario: 'Giovan Francesco Valier'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -30,7 +35,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -45,7 +50,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -60,7 +65,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -75,7 +80,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -90,7 +95,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -105,7 +110,7 @@ taxonomy:
 	    Destinatario: Ignoto
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Venezia
@@ -120,7 +125,7 @@ taxonomy:
 	    Destinatario: 'Pietro Aretino'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Padova
@@ -135,7 +140,7 @@ taxonomy:
 	    Destinatario: 'Francesco dall''Arme'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Venezia
@@ -150,7 +155,7 @@ taxonomy:
 	    Destinatario: 'Giulio Tancredi'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Venezia
@@ -165,7 +170,7 @@ taxonomy:
 	    Destinatario: 'Giovanni Brevio'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Venezia
@@ -180,7 +185,7 @@ taxonomy:
 	    Destinatario: 'Cardinal di Mantova'
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Venezia
@@ -195,7 +200,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'I Diarii di Marino Sanuto'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': 'vol. 54'
 	    Luogo: Bologna
@@ -210,7 +215,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': 'Tomo I, Parte II'
 	    Luogo: Bologna
@@ -225,7 +230,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: "9 sonetti tratti dal ms. Marc. Marc. It. XI 66 (cc.\n308r-308v)"
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -240,7 +245,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Rime, 27 e 46'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -255,7 +260,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Amori I, 126-131; III, 103'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -270,7 +275,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Sonetto '
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -285,7 +290,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: '2 sonetti tratti dal ms. Marc. Lat. XIV (cc. 243r-243v)'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -300,7 +305,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: ""
 	    'Curatori volume': ""
-	    'Titolo volume': 'Antonello Fabio Caterino, «Vedo il male e non lo posso schivare»: Le rime di Antonio Brocardo tra classicismi e polemiche, tesi di dottorato '
+	    Volume: '«Vedo il male e non lo posso schivare»: Le rime di Antonio Brocardo tra classicismi e polemiche, tesi di dottorato '
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
@@ -315,7 +320,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Un decennio della vita di m. Pietro Bembo '
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Torino
@@ -330,7 +335,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Gli scrittori d’Italia, cioè notizie storiche e critiche intorno alle vite e agli scritti dei letterati italiani'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': 'vol. II, parte IV,'
 	    Luogo: Brescia
@@ -345,7 +350,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Francesco Berni'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Firenze
@@ -360,7 +365,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Dulces lusus. Lirica pastorale e libri di poesia nel Cinquecento'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: Alessandria
@@ -375,7 +380,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Antonio Brocardo'
 	    'Curatori volume': ""
-	    'Titolo volume': ""
+	    Volume: ""
 	    Rivista: ""
 	    'Parte e volume': 'vol. 14'
 	    Luogo: ""
@@ -390,7 +395,7 @@ taxonomy:
 	    Destinatario: ""
 	    Titolo: 'Antonio Brocardo'
 	    'Curatori volume': ""
-	    'Titolo volume': "Dizionario di eretici, dissidenti e inquisitori nel mondo mediterraneo\n\n"
+	    Volume: "Dizionario di eretici, dissidenti e inquisitori nel mondo mediterraneo\n\n"
 	    Rivista: ""
 	    'Parte e volume': ""
 	    Luogo: ""
