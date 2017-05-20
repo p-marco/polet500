@@ -1,7 +1,7 @@
 ---
 Date: 02/02/2017 11.20.44
 Name: Antonello Fabio Caterino
-Role: Responsabile Scientifico
+Role: Coordinatore <br>generale
 Image: profile_caterino.jpg
 Email: antonellofabio.caterino@unical.it
 Homepage: 

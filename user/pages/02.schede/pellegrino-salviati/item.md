@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
 	keywords: polemiche letterarie, pellegrino salviati, letteratura cinquecento
+date: 04-01-2017
 taxonomy:
 	category: blog
     tag: [Gerusalemme Liberata, Orlando Furioso, Accdemia della Crusca, Dialoghi, Lingua, Unità di tempo e luogo, Religiosità]

@@ -32,3 +32,5 @@ debugger:
   twig: true
   shutdown:
     close_connection: true
+
+

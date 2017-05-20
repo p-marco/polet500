@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
 	keywords: polemiche letterarie, pietro bembo, antonio brocardo, letteratura italiana del cinquecento
+date: 12-11-2016
 taxonomy:
 	category: blog
     tag: [Divergenze di natura poetica, diverse concezioni del classicismo, probabile coinvolgimento di fattori personali o politici]

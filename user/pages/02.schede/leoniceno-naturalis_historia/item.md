@@ -5,11 +5,12 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/leoniceno-naturalis_historia/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/leoniceno-naturalis_historia/banner-fb.jpg
 	keywords: polemiche letterarie, plinio, leoniceno
+date: 17-02-2017
 taxonomy:
 	category: blog
     tag: [Filologia, Medico-scientifica, Auctoritas, Res/verba, Cultura greca vs. latina]
     char: [Nicolò Leoniceno, Antonio de Ferrariis (Galateo), Pontico Virunio, Angelo Poliziano, Pandolfo Collenuccio, Ermolao Barbaro, Alessandro Benedetti, Girolamo Menocchio, Francesco Totto, Erasmo da Rotterdam, Paolo Giovio, Ludovico Bonacciolo, Giovanni Maria Tricaglia (Tricelius),  Pico della Mirandola, Ludovico Carri da Volterra, Antonio Cittadini da Faenza, Luca Ripa da Reggio, Marco Antonio Sabellico, Berengario da Carpi]
-    date: 17/02/17
+    date: 17/02/2017
     author: Laura Antonella Piras
     chronology: 1491- 1509
     bibliography:

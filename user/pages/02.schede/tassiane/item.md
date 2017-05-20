@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/tassiane/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/tassiane/banner-fb.jpg
 	keywords: polemiche letterarie, torquato tasso, ariosto, letteratura italiana del cinquecento
+date: 24-01-2017
 taxonomy:
 	category: blog
     tag: [Tasso e Ariosto, cristianità e paganesimo, questioni linguistiche, purezza del toscano]

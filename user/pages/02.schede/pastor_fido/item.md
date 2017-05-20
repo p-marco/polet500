@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/pastor_fido/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/pastor_fido/banner-fb.jpg
 	keywords: polemiche letterarie, letteratura cinquecento
+date: 13-05-2017
 taxonomy:
 	category: blog
     tag: [Pastor fido, Tragicommedia, favola pastorale]

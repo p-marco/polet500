@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/bembo-bandinelli/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/bembo-bandinelli/banner-fb.jpg
 	keywords: polemiche letterarie, pietro bembo, letteratura cinquecento
+date: 28-01-2017
 taxonomy:
 	category: blog
     tag: [Divergenze di natura poetica]

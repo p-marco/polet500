@@ -5,6 +5,7 @@ metadata:
 	og:image: http://nuovorinascimento.org/polet500/schede/pomponazzi-nifo-fiandino/banner-fb.jpg
 	image: http://nuovorinascimento.org/polet500/schede/pomponazzi-nifo-fiandino/banner-fb.jpg
 	keywords: polemiche letterarie, letteratura cinquecento
+date: 02-02-2017
 taxonomy:
 	category: blog
     tag: [Divergenza sul concetto di immortalità dell'anima, Diversa interpretazione dell'opera di Aristotele]
