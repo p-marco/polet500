@@ -2,8 +2,8 @@
 title:  Polemica sul Pastor fido tra Guarini, Denores e altri
 metadata:
 	description: Polemica di fine '500 sul Pastor Fido tra Guarini e Denores, poi proseguita con altri letterati (Summo, Ingegneri, Malacreta, Beni, Pescetti e Savio).
-	og:image: http://nuovorinascimento.org/polet500/schede/pastor_fido/banner-fb.jpg
-	image: http://nuovorinascimento.org/polet500/schede/pastor_fido/banner-fb.jpg
+	og:image: /polet500/schede/pastor_fido/banner-fb.jpg
+	image: /polet500/schede/pastor_fido/banner-fb.jpg
 	keywords: polemiche letterarie, letteratura cinquecento
 date: 13-05-2017
 taxonomy:
@@ -305,6 +305,6 @@ taxonomy:
 
 Inizialmente relativa a Guarini e Denores, dopo la morte di quest''ultimo si amplia aprendosi a vari altri autori. Il motivo originale è la pubblicazione del Verato Primo da parte di Guarini nel quale l'autore critica le tesi del cipriota sulla favola pastorale. 
 
-Da lì la polemica si focalizza sul Pastor fido di cui, nella sua replica, Denores condanna l'inconsueta mescolanza di stile tragico e comico. La risposta di Guarini arriva dopo la morte dell'antagonista e innesca la reazione di altri eruditi. La polemica si configura presto nello scontro tra due concezioni della letteratura: il classicismo neoscolastico, con il suo polo nello studio padovano, che rifiuta ogni opera che non rispetti le regole desunte della Poetica di Aristotele; e una posizione aperta, sperimentale, che vede nell''arte l''azione di un ingegno originale, insofferente a ogni rigido dogmatismo normativo. La critica di Ingegneri si concentra sulla sovversione dell'unità d'azione ed è tesa a valorizzare l'altra grande pastorale del secondo '500, l'Aminta; e sullo stesso tema insiste Malacreta. Summo, riprendendo i temi affronati da Denores, stigmatizza l''uso anticlassico della commistione degli elementi tragici e comici e condanna l'arbitraria pretesa di inventare un nuovo genere assente nella tradizione greca e latina. Le principali repliche sono condotte dallo stesso Guarini, spesso dietro pseudonimi (L'Attizzato, Verato); mentre le voci amiche giungono da Beni, Pescetti e Savio. 
+Da lì la polemica si focalizza sul Pastor fido di cui, nella sua replica, Denores condanna l'inconsueta mescolanza di stile tragico e comico. La risposta di Guarini arriva dopo la morte dell'antagonista e innesca la reazione di altri eruditi. La polemica si configura presto nello scontro tra due concezioni della letteratura: il classicismo neoaristotelico, con il suo polo nello studio padovano, che rifiuta ogni opera che non rispetti le regole desunte della Poetica di Aristotele; e una posizione aperta, sperimentale, che vede nell''arte l''azione di un ingegno originale, insofferente a ogni rigido dogmatismo normativo. La critica di Ingegneri si concentra sulla sovversione dell'unità d'azione ed è tesa a valorizzare l'altra grande pastorale del secondo '500, l'Aminta; e sullo stesso tema insiste Malacreta. Summo, riprendendo i temi affronati da Denores, stigmatizza l''uso anticlassico della commistione degli elementi tragici e comici e condanna l'arbitraria pretesa di inventare un nuovo genere assente nella tradizione greca e latina. Le principali repliche sono condotte dallo stesso Guarini, spesso dietro pseudonimi (L'Attizzato, Verato); mentre le voci amiche giungono da Beni, Pescetti e Savio. 
 
 Con l'intervento di quest'ultimo e la pubblicazione del Compendio della poesia tragicomica di Guarini, rialeborazione dei due Verati, si chiude questa polemica nella quale si palesano le tensioni di una nuova estetica, quella barocca, i cui presupposti artistici avranno un profonda influenza nella letteratura italiana.  

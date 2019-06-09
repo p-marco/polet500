@@ -2,8 +2,8 @@
 title: Polemiche Pellegrino-Salviati e altri
 metadata:
 	description: Il dialogo Il Carrafa di Pellegrino sostiene la superiorità della epica tassiana rispetto al Furioso: la polemica infiamma poi vari intellettuali come Salviati.
-	og:image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
-	image: http://nuovorinascimento.org/polet500/schede/pellegrino-salviati/banner-fb.jpg
+	og:image: /polet500/schede/pellegrino-salviati/banner-fb.jpg
+	image: /polet500/schede/pellegrino-salviati/banner-fb.jpg
 	keywords: polemiche letterarie, pellegrino salviati, letteratura cinquecento
 date: 04-01-2017
 taxonomy:
