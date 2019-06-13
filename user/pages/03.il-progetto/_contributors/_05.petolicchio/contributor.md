@@ -10,7 +10,7 @@ Linkedin: http://linkedin.com/in/marcopetolicchio
 Academia: http://independent.academia.edu/MarcoPetolicchio
 GooglePlus: 
 GitHub: http://github.com/p-marco
-University: 
+University: "Palacky University, Olomouc (CZ)"
 Twitter:
 Schede: "FALSE"
 Color: " #00bcd4"

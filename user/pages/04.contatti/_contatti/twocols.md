@@ -20,6 +20,6 @@ buttons:
 -
 	label: 
 	class: tags-bg bg-primary
-	link: https://github.com/p-marco/polet500
+	link: https://github.com/polet500
 	icon: fa-github
 ---

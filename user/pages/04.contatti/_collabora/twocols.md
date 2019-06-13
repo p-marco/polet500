@@ -5,7 +5,7 @@ buttons:
 -
 	class: "tags tags-bg bg-primary"
 	label: "Collabora"
-	link: "Collabora"
+	link: "https://drive.google.com/open?id=1O-__AI7TnHfQaRuSnrigkmkd21QK9P6ajS6PPBmiB4o"
 -
 	class: "tags tags-bg"
 	label: "Email"

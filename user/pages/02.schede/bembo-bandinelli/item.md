@@ -2,8 +2,8 @@
 title:  Polemica Bembo-Bandinelli
 metadata:
 	description: Ubaldino Bandinelli fu accusato di aver detto male dei Brevi del Bembo. L'Aretino prese le difese di quest'ultimo. Bandinelli prova infine a discolparsi.
-	og:image: http://nuovorinascimento.org/polet500/schede/bembo-bandinelli/banner-fb.jpg
-	image: http://nuovorinascimento.org/polet500/schede/bembo-bandinelli/banner-fb.jpg
+	og:image: /polet500/schede/bembo-bandinelli/banner-fb.jpg
+	image: /polet500/schede/bembo-bandinelli/banner-fb.jpg
 	keywords: polemiche letterarie, pietro bembo, letteratura cinquecento
 date: 28-01-2017
 taxonomy:

@@ -2,8 +2,8 @@
 title: Polemica Bembo-Brocardo
 metadata:
 	description: La polemica Bembo-Brocardo è una delle più controverse querelle del primo Cinquecento, e vede contrapposti Antonio Brocardo e il Bembo per ragioni retoriche.
-	og:image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
-	image: http://nuovorinascimento.org/polet500/schede/bembo-brocardo/banner-fb.jpg
+	og:image: /polet500/schede/bembo-brocardo/banner-fb.jpg
+	image: /polet500/schede/bembo-brocardo/banner-fb.jpg
 	keywords: polemiche letterarie, pietro bembo, antonio brocardo, letteratura italiana del cinquecento
 date: 12-11-2016
 taxonomy:

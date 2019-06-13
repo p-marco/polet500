@@ -1,4 +1,1 @@
-Year, Author, Category:Type, Publication, Link 
-{% for bibliography in page.taxonomy.bibliography |sort %}
-{{ bibliography.Data }},{{ bibliography.Autore }},{{ bibliography.Categoria }}:{{ bibliography.Tipologia }},"{{ bibliography.Autore }}{% if bibliography.Destinatario %}-{{ bibliography.Destinatario }}{% endif %}({{ bibliography.Data }}),{{ bibliography.Titolo }}.{% if bibliography.Volume %},{{ bibliography.Volume }}{% endif %},{{ bibliography.Editore }},{{ bibliography.Luogo }};{% if bibliography.Pagine %}pp.{{ bibliography.Pagine }}{% endif %}.",{% if bibliography.Link %}LINK {% else %}NONE {% endif %} 
-{% endfor %}
+{{ page.raw_content }}
